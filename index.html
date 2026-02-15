@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영흥도펜션 오호라 | 가족여행 친구모임 최적의 펜션</title>
+<meta name="description" content="영흥도 바다가 한눈에! 오호라 펜션에서 가족, 친구와 함께 특별한 휴식을 만나보세요. 오션뷰, BBQ, 키즈존 완비.">
+<meta property="og:title" content="영흥도펜션 오호라">
+<meta property="og:description" content="바다가 한눈에 보이는 영흥도 프리미엄 펜션. 가족여행, 친구모임에 최적화된 공간.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --wood: #8B6914;
+  --wood-dark: #6B4F10;
+  --sand: #F5E6CA;
+  --sand-light: #FFF8EE;
+  --ocean: #4A90A4;
+  --ocean-dark: #3A7A8E;
+  --forest: #5B8C5A;
+  --forest-dark: #4A7449;
+  --warm-gray: #6B5E50;
+  --text: #3D3426;
+  --text-light: #7A6E60;
+  --white: #FFFFFF;
+  --shadow: rgba(107, 79, 16, 0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--sand-light);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1.3;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img { max-width: 100%; height: auto; }
+
+/* ─── Navigation ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 248, 238, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 105, 20, 0.1);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px var(--shadow); }
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--wood);
+}
+.nav-logo span { color: var(--ocean); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover { color: var(--wood); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--ocean);
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--forest);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: var(--forest-dark);
+  transform: translateY(-1px);
+}
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--wood);
+  transition: 0.3s;
+}
+
+/* ─── Hero ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background:
+    linear-gradient(175deg,
+      #87CEEB 0%,
+      #4A90A4 25%,
+      #3A7A8E 40%,
+      #5B8C5A 55%,
+      #8B6914 70%,
+      #F5E6CA 100%
+    );
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 80%, rgba(245, 230, 202, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 20%, rgba(135, 206, 235, 0.2) 0%, transparent 50%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--sand-light), transparent);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  max-width: 800px;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+}
+.hero h1 em {
+  font-style: normal;
+  color: #FFE4A0;
+}
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--forest);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(91, 140, 90, 0.4);
+}
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(91, 140, 90, 0.5); }
+.btn-outline {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+.btn-outline:hover { background: rgba(255, 255, 255, 0.25); }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+.scroll-hint::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 8px auto 0;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  transform: rotate(45deg);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-8px); }
+  60% { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* ─── Sections Common ─── */
+.section {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-header .label {
+  display: inline-block;
+  color: var(--ocean);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.section-header p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Features / Intro ─── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.feature-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+.feature-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.feature-icon.ocean { background: rgba(74, 144, 164, 0.12); }
+.feature-icon.forest { background: rgba(91, 140, 90, 0.12); }
+.feature-icon.wood { background: rgba(139, 105, 20, 0.12); }
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.feature-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ─── Rooms ─── */
+.rooms-bg {
+  background: var(--white);
+  padding: 100px 0;
+}
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.room-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--sand-light);
+}
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+.room-img {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.room-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.room-card:hover .room-img-bg { transform: scale(1.05); }
+.room-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--ocean);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.room-info { padding: 28px; }
+.room-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.room-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+.room-meta span { display: flex; align-items: center; gap: 4px; }
+.room-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+.room-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.room-price .from {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+.room-price .price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--wood);
+  font-family: 'Noto Serif KR', serif;
+}
+.room-price .unit {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ─── Facilities ─── */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.facility-item {
+  text-align: center;
+  padding: 32px 16px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: transform 0.2s;
+}
+.facility-item:hover { transform: translateY(-4px); }
+.facility-item .icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.facility-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.facility-item p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.nearby-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.nearby-title h3 {
+  font-size: 1.3rem;
+  color: var(--ocean);
+}
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.nearby-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: transform 0.2s;
+}
+.nearby-card:hover { transform: translateY(-4px); }
+.nearby-card .icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+.nearby-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.nearby-card p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* ─── Location ─── */
+.location-bg {
+  background: var(--white);
+  padding: 100px 0;
+}
+.location-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.location-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+.location-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.location-detail .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.location-detail h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.location-detail p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.location-map {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  background: var(--sand);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.map-placeholder {
+  text-align: center;
+  color: var(--text-light);
+}
+.map-placeholder .icon { font-size: 3rem; margin-bottom: 12px; }
+.map-placeholder p { font-size: 0.9rem; }
+
+/* ─── CTA / Booking ─── */
+.cta-section {
+  padding: 100px 24px;
+  text-align: center;
+  background:
+    linear-gradient(135deg,
+      var(--ocean) 0%,
+      var(--ocean-dark) 50%,
+      var(--forest-dark) 100%
+    );
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);
+}
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cta-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 16px;
+}
+.cta-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-naver {
+  background: #03C75A;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(3, 199, 90, 0.4);
+  font-size: 1.1rem;
+  padding: 18px 44px;
+}
+.btn-naver:hover { box-shadow: 0 6px 30px rgba(3, 199, 90, 0.5); }
+.btn-kakao {
+  background: #FEE500;
+  color: #191919;
+  box-shadow: 0 4px 20px rgba(254, 229, 0, 0.3);
+  font-size: 1.1rem;
+  padding: 18px 44px;
+}
+.btn-kakao:hover { box-shadow: 0 6px 30px rgba(254, 229, 0, 0.4); }
+.cta-contact {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cta-contact a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.cta-contact a:hover { color: var(--white); }
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 2;
+}
+.footer strong { color: rgba(255, 255, 255, 0.85); }
+
+/* ─── Animations ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 1024px) {
+  .features-grid, .nearby-grid { grid-template-columns: repeat(2, 1fr); }
+  .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+  .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 248, 238, 0.98);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(139, 105, 20, 0.1);
+    box-shadow: 0 8px 24px var(--shadow);
+  }
+
+  .features-grid, .nearby-grid { grid-template-columns: 1fr; }
+  .rooms-grid { grid-template-columns: 1fr; }
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .location-content { grid-template-columns: 1fr; }
+  .location-map { height: 280px; }
+
+  .section { padding: 64px 20px; }
+  .rooms-bg, .location-bg { padding: 64px 0; }
+  .cta-section { padding: 64px 20px; }
+
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .cta-contact { flex-direction: column; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .facilities-grid { grid-template-columns: 1fr 1fr; }
+  .room-img { height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">오호라<span>펜션</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#intro">소개</a></li>
+      <li><a href="#rooms">객실</a></li>
+      <li><a href="#facilities">시설</a></li>
+      <li><a href="#location">오시는 길</a></li>
+      <li><a href="#booking" class="nav-cta">예약하기</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">영흥도 No.1 가족펜션</div>
+    <h1>바다 위의 쉼표,<br><em>오호라 펜션</em></h1>
+    <p>
+      서울에서 1시간, 영흥도 바다가 눈앞에 펼쳐지는 곳.<br>
+      가족과 친구가 함께하는 특별한 휴식을 만나보세요.
+    </p>
+    <div class="hero-buttons">
+      <a href="#booking" class="btn btn-primary">네이버 예약하기</a>
+      <a href="#rooms" class="btn btn-outline">객실 둘러보기</a>
+    </div>
+  </div>
+  <div class="scroll-hint">아래로 스크롤</div>
+</section>
+
+<!-- Intro / Features -->
+<section class="section" id="intro">
+  <div class="section-header fade-in">
+    <span class="label">About Us</span>
+    <h2>오호라 펜션을 선택하는 이유</h2>
+    <p>영흥도의 아름다운 바다와 자연 속에서, 가족과 친구를 위한 최고의 공간을 준비했습니다.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon ocean">🌊</div>
+      <h3>바다가 눈앞에</h3>
+      <p>객실에서 바로 보이는 오션뷰. 파도 소리를 들으며 힐링하는 특별한 시간을 선물합니다.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon forest">👨‍👩‍👧‍👦</div>
+      <h3>가족 친화 공간</h3>
+      <p>아이들이 뛰어놀 수 있는 키즈존과 넓은 거실. 온 가족이 편안하게 즐기는 휴식처입니다.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon wood">🔥</div>
+      <h3>프라이빗 바베큐</h3>
+      <p>각 객실 전용 바베큐 공간에서 영흥도의 신선한 해산물과 함께 잊지 못할 저녁을 만드세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section class="rooms-bg" id="rooms">
+  <div class="section-header fade-in" style="padding: 0 24px;">
+    <span class="label">Rooms</span>
+    <h2>객실 안내</h2>
+    <p>가족 여행부터 친구 모임까지, 인원과 목적에 맞는 객실을 선택하세요.</p>
+  </div>
+  <div class="rooms-grid">
+    <div class="room-card fade-in">
+      <div class="room-img">
+        <img class="room-img-bg" src="family_love.png" alt="가족사랑 객실 외관">
+        <span class="room-badge" style="background: var(--wood);">프리미엄</span>
+      </div>
+      <div class="room-info">
+        <h3>가족사랑</h3>
+        <div class="room-meta">
+          <span>🏠 독채</span>
+          <span>👥 기준 6인 (최대 10인)</span>
+        </div>
+        <div class="room-meta">
+          <span>🛏️ 침실 2 · 침대 2</span>
+          <span>🚿 욕실 1</span>
+        </div>
+        <p class="room-desc">행복이 가득한 우리 가족만의 독채 공간. 넓은 2개의 침실과 프라이빗 야외 공간에서 잊지 못할 추억을 만드세요.</p>
+        <div class="room-price">
+          <span class="price">315,000원 ~ 450,000원</span>
+          <span class="unit">/1박</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card fade-in">
+      <div class="room-img">
+        <img class="room-img-bg" src="nightsunset.png" alt="저녁노을 객실 외관">
+        <span class="room-badge" style="background: var(--forest);">추천</span>
+      </div>
+      <div class="room-info">
+        <h3>저녁노을</h3>
+        <div class="room-meta">
+          <span>🏠 독채</span>
+          <span>👥 기준 4인 (최대 8인)</span>
+        </div>
+        <div class="room-meta">
+          <span>🛏️ 침실 1</span>
+          <span>🚿 욕실 1</span>
+        </div>
+        <p class="room-desc">추억이 가득한 독채 펜션. 넓은 창문 너머 영흥도의 아름다운 노을을 감상하며 특별한 저녁을 보내세요.</p>
+        <div class="room-price">
+          <span class="price">280,000원 ~ 400,000원</span>
+          <span class="unit">/1박</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card fade-in">
+      <div class="room-img">
+        <img class="room-img-bg" src="lunarlight.png" alt="감성달빛 객실 외관">
+        <span class="room-badge">인기</span>
+      </div>
+      <div class="room-info">
+        <h3>감성달빛</h3>
+        <div class="room-meta">
+          <span>🏠 독채</span>
+          <span>👥 기준 4인 (최대 6인)</span>
+        </div>
+        <div class="room-meta">
+          <span>🛏️ 침실 2 · 침대 1</span>
+          <span>🚿 욕실 1</span>
+        </div>
+        <p class="room-desc">낭만이 가득한 감성 독채. 옥상 테라스에서 달빛 아래 소중한 사람과 특별한 밤을 보내세요.</p>
+        <div class="room-price">
+          <span class="price">210,000원 ~ 300,000원</span>
+          <span class="unit">/1박</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card fade-in">
+      <div class="room-img">
+        <img class="room-img-bg" src="minicamp.jpeg" alt="미니캠프 객실 외관">
+        <span class="room-badge" style="background: var(--ocean);">신규</span>
+      </div>
+      <div class="room-info">
+        <h3>미니캠프</h3>
+        <div class="room-meta">
+          <span>🏠 독채</span>
+          <span>👥 기준 2인 (최대 4인)</span>
+        </div>
+        <div class="room-meta">
+          <span>🛏️ 침실 1</span>
+          <span>🚿 욕실 1</span>
+        </div>
+        <p class="room-desc">넓은 잔디마당과 프라이빗 바베큐 공간이 있는 아늑한 독채. 커플이나 소규모 여행에 딱 맞는 공간입니다.</p>
+        <div class="room-price">
+          <span class="price">가격 문의</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section class="section" id="facilities">
+  <div class="section-header fade-in">
+    <span class="label">Facilities</span>
+    <h2>시설 & 즐길거리</h2>
+    <p>펜션 안에서도 밖에서도, 즐거움이 가득한 영흥도 오호라.</p>
+  </div>
+
+  <div class="facilities-grid">
+    <div class="facility-item fade-in">
+      <div class="icon">🔥</div>
+      <h4>바베큐장</h4>
+      <p>개별 전용 BBQ</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">🅿️</div>
+      <h4>무료 주차</h4>
+      <p>객실당 1대 무료</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">🧒</div>
+      <h4>키즈존</h4>
+      <p>안전한 놀이공간</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">🌅</div>
+      <h4>공용 테라스</h4>
+      <p>바다뷰 일출 명소</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">📶</div>
+      <h4>무료 Wi-Fi</h4>
+      <p>전 객실 고속 인터넷</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">❄️</div>
+      <h4>냉난방 완비</h4>
+      <p>사계절 쾌적한 환경</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">🍳</div>
+      <h4>취사 시설</h4>
+      <p>기본 조리기구 구비</p>
+    </div>
+    <div class="facility-item fade-in">
+      <div class="icon">🧴</div>
+      <h4>어메니티</h4>
+      <p>기본 세면도구 제공</p>
+    </div>
+  </div>
+
+  <div class="nearby-title fade-in">
+    <h3>🗺️ 주변 관광지</h3>
+  </div>
+  <div class="nearby-grid">
+    <div class="nearby-card fade-in">
+      <div class="icon">🏖️</div>
+      <div>
+        <h4>십리포 해수욕장</h4>
+        <p>차량 5분 / 고운 모래사장과 얕은 수심, 가족 물놀이 최적</p>
+      </div>
+    </div>
+    <div class="nearby-card fade-in">
+      <div class="icon">🗼</div>
+      <div>
+        <h4>영흥도 등대</h4>
+        <p>차량 10분 / 영흥도 최남단 일몰 명소, 포토존 인기</p>
+      </div>
+    </div>
+    <div class="nearby-card fade-in">
+      <div class="icon">🦀</div>
+      <div>
+        <h4>갯벌 체험장</h4>
+        <p>도보 15분 / 조개잡이, 게잡이 등 아이들 자연 체험 학습</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="location-bg" id="location">
+  <div class="section-header fade-in" style="padding: 0 24px;">
+    <span class="label">Location</span>
+    <h2>오시는 길</h2>
+    <p>서울에서 약 1시간, 영흥대교를 건너면 바로 만나는 섬 속 휴양지.</p>
+  </div>
+  <div class="location-content">
+    <div class="location-info fade-in">
+      <h3>찾아오시는 방법</h3>
+      <div class="location-detail">
+        <div class="icon">📍</div>
+        <div>
+          <h4>주소</h4>
+          <p>인천 옹진군 영흥면 영흥로722번길 128 1동</p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="icon">🚗</div>
+        <div>
+          <h4>자가용</h4>
+          <p>서해안고속도로 → 서안산IC → 영흥대교 경유<br>네비 검색: <strong>"인천 옹진군 영흥면 영흥로722번길 128"</strong></p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="icon">🚌</div>
+        <div>
+          <h4>대중교통</h4>
+          <p>오이도역 → 790번 버스 → 영흥도 하차<br>하차 후 도보 또는 픽업 서비스 문의</p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="icon">⏱️</div>
+        <div>
+          <h4>소요시간</h4>
+          <p>서울 기준 약 1시간 ~ 1시간 30분<br>인천공항 기준 약 40분</p>
+        </div>
+      </div>
+    </div>
+    <div class="location-map fade-in">
+      <div class="map-placeholder">
+        <div class="icon">🗺️</div>
+        <p>영흥도 위치</p>
+        <p style="margin-top:8px; font-size:0.8rem;">
+          네이버 지도에서 "영흥도펜션 오호라" 검색
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking CTA -->
+<section class="cta-section" id="booking">
+  <div class="cta-content fade-in">
+    <h2>지금 바로 예약하세요</h2>
+    <p>가족과 친구와 함께하는 영흥도에서의 특별한 하루,<br>오호라 펜션이 준비하겠습니다.</p>
+    <div class="cta-buttons">
+      <a href="https://booking.naver.com" target="_blank" rel="noopener" class="btn btn-naver">
+        네이버 예약
+      </a>
+      <a href="https://pf.kakao.com" target="_blank" rel="noopener" class="btn btn-kakao">
+        카카오톡 문의
+      </a>
+    </div>
+    <div class="cta-contact">
+      <a href="tel:0507-1348-6451">📞 0507-1348-6451</a>
+      <a href="mailto:ohhora@example.com">✉️ ohhora@example.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <strong>영흥도펜션 오호라</strong><br>
+  인천 옹진군 영흥면 영흥로722번길 128 1동<br>
+  TEL: 0507-1348-6451 | E-mail: ohhora@example.com<br>
+  <span style="font-size:0.75rem; opacity:0.5; margin-top: 8px; display: inline-block;">
+    &copy; 2026 영흥도펜션 오호라. All rights reserved.
+  </span>
+</footer>
+
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Scroll fade-in animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
