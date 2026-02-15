@@ -611,6 +611,196 @@ img { max-width: 100%; height: auto; }
 }
 .cta-contact a:hover { color: var(--white); }
 
+/* ─── Navi Buttons ─── */
+.navi-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.navi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: var(--white);
+}
+.navi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.navi-btn .navi-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.navi-kakao { background: #FEE500; color: #191919; }
+.navi-naver { background: #03C75A; }
+.navi-copy {
+  background: var(--white);
+  color: var(--text);
+  border: 2px solid #ddd;
+}
+.navi-copy:hover { border-color: var(--ocean); color: var(--ocean); }
+
+.copy-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .navi-buttons { gap: 8px; }
+  .navi-btn { padding: 10px 14px; font-size: 0.82rem; }
+}
+
+/* ─── Reviews Rolling ─── */
+.reviews-section {
+  padding: 100px 0;
+  background: var(--sand);
+  overflow: hidden;
+}
+.reviews-section .section-header { padding: 0 24px; }
+.reviews-track-wrapper {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.reviews-track-wrapper::before,
+.reviews-track-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.reviews-track-wrapper::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--sand), transparent);
+}
+.reviews-track-wrapper::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--sand), transparent);
+}
+.reviews-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: 100%;
+}
+.reviews-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.reviews-col-up { animation: scrollUp 30s linear infinite; }
+.reviews-col-down { animation: scrollDown 30s linear infinite; }
+.reviews-track-wrapper:hover .reviews-col { animation-play-state: paused; }
+
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+@keyframes scrollDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 16px var(--shadow);
+  flex-shrink: 0;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.review-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.review-date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+.review-room {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--ocean);
+  background: rgba(74, 144, 164, 0.1);
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+.review-stars {
+  color: #FFB800;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.review-text {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+.review-text strong {
+  color: var(--wood);
+}
+
+@media (max-width: 768px) {
+  .reviews-columns { grid-template-columns: 1fr; }
+  .reviews-col-down { display: none; }
+  .reviews-track-wrapper { height: 400px; }
+}
+
 /* ─── Footer ─── */
 .footer {
   background: var(--text);
@@ -690,6 +880,7 @@ img { max-width: 100%; height: auto; }
       <li><a href="#rooms">객실</a></li>
       <li><a href="#facilities">시설</a></li>
       <li><a href="#location">오시는 길</a></li>
+      <li><a href="#reviews">후기</a></li>
       <li><a href="#booking" class="nav-cta">예약하기</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
@@ -938,7 +1129,20 @@ img { max-width: 100%; height: auto; }
           <p>인천 옹진군 영흥면 영흥로722번길 128 1동</p>
         </div>
       </div>
-      <div class="location-detail">
+
+      <div class="navi-buttons">
+        <a href="https://map.kakao.com/link/to/영흥도펜션 오호라,37.2712185,126.4597677" target="_blank" rel="noopener" class="navi-btn navi-kakao">
+          <span class="navi-icon">🗨️</span> 카카오내비
+        </a>
+        <a href="https://map.naver.com/p/entry/place/1200511949" target="_blank" rel="noopener" class="navi-btn navi-naver">
+          <span class="navi-icon">🅝</span> 네이버지도
+        </a>
+        <button class="navi-btn navi-copy" onclick="copyAddress()">
+          <span class="navi-icon">📋</span> 주소 복사
+        </button>
+      </div>
+
+      <div class="location-detail" style="margin-top:24px;">
         <div class="icon">🚗</div>
         <div>
           <h4>자가용</h4>
@@ -967,6 +1171,196 @@ img { max-width: 100%; height: auto; }
         <p style="margin-top:8px; font-size:0.8rem;">
           네이버 지도에서 "영흥도펜션 오호라" 검색
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews — 예약 직전 배치로 전환율 극대화 -->
+<section class="reviews-section" id="reviews">
+  <div class="section-header fade-in">
+    <span class="label">Reviews</span>
+    <h2>오호라를 다녀간 분들의 이야기</h2>
+    <p>직접 머물고 느낀 생생한 후기를 확인해보세요.</p>
+  </div>
+  <div class="reviews-track-wrapper">
+    <div class="reviews-columns">
+      <!-- Column 1: scrolls up -->
+      <div class="reviews-col reviews-col-up" id="reviewsCol1">
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--ocean);">J</div>
+              <div>
+                <div class="review-name">제이맘</div>
+                <div class="review-room">가족사랑</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.08</div></div>
+          </div>
+          <p class="review-text">아이 둘 데리고 갔는데 <strong>독채라서 눈치 안 보고 마음껏 뛰어놀 수 있었어요.</strong> 바베큐하면서 바다 바라보는데 진짜 힐링... 남편도 여기 또 오자고 난리예요. 침실이 2개라 아이들 재우고 부부만의 시간도 가졌답니다.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--forest);">S</div>
+              <div>
+                <div class="review-name">써니데이</div>
+                <div class="review-room">저녁노을</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.07</div></div>
+          </div>
+          <p class="review-text">친구 4명이서 갔는데 <strong>저녁노을이라는 이름값을 제대로 합니다.</strong> 창문 너머로 노을 지는 거 보면서 와인 한 잔 했는데 인생샷 건졌어요. 서울에서 1시간이면 오는데 이런 뷰라니... 무조건 재방문!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--wood);">M</div>
+              <div>
+                <div class="review-name">민서아빠</div>
+                <div class="review-room">가족사랑</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.09</div></div>
+          </div>
+          <p class="review-text">양가 부모님 모시고 10명이서 갔어요. <strong>넓은 독채에 침실 2개라 어르신들도 편하게 주무셨어요.</strong> 손주들이랑 앞마당에서 뛰어노는 거 보시고 너무 좋아하셨습니다. 3대가 함께 여행하기 딱 좋은 곳!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#E67E73;">H</div>
+              <div>
+                <div class="review-name">하늘이네</div>
+                <div class="review-room">감성달빛</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.10</div></div>
+          </div>
+          <p class="review-text"><strong>옥상 테라스에서 본 별이 잊히질 않아요.</strong> 아이가 "엄마 별이 쏟아져!" 하는데 울컥했네요. 도심에선 절대 못 보는 밤하늘이에요. 감성달빛이라는 이름이 진짜 딱 맞습니다.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#9B8EC4;">Y</div>
+              <div>
+                <div class="review-name">율무커플</div>
+                <div class="review-room">미니캠프</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.11</div></div>
+          </div>
+          <p class="review-text">커플 여행으로 미니캠프 갔는데 <strong>잔디마당이 완전 프라이빗해서 둘만의 세상 같았어요.</strong> 바베큐에 고기 구워먹고 밤에 별 보면서 이야기 나누고... 프러포즈 장소로도 완벽할 듯!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--ocean);">K</div>
+              <div>
+                <div class="review-name">코코네 가족</div>
+                <div class="review-room">저녁노을</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.06</div></div>
+          </div>
+          <p class="review-text">5살 아들이 갯벌 체험하고 너무 좋아했어요. <strong>펜션 근처에 갯벌, 해수욕장 다 있어서 하루가 모자랄 정도!</strong> 사장님이 주변 맛집도 친절하게 알려주셔서 횟집도 잘 갔다왔네요.</p>
+        </div>
+
+      </div>
+
+      <!-- Column 2: scrolls down -->
+      <div class="reviews-col reviews-col-down" id="reviewsCol2">
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#E8A87C;">L</div>
+              <div>
+                <div class="review-name">러블리수진</div>
+                <div class="review-room">감성달빛</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.08</div></div>
+          </div>
+          <p class="review-text">여자 친구 4명이서 우정여행! <strong>감성달빛 테라스에서 찍은 사진이 인스타 인생샷이 됐어요.</strong> 밤에 와인 파티하면서 수다 떨기 최고의 장소. 다음엔 가족사랑으로 더 많은 친구들과 올 예정!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--forest);">P</div>
+              <div>
+                <div class="review-name">파파리나</div>
+                <div class="review-room">가족사랑</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.07</div></div>
+          </div>
+          <p class="review-text"><strong>여기 바베큐장이 진짜 제대로예요.</strong> 각 객실마다 프라이빗하게 있어서 옆 눈치 하나도 안 봐도 돼요. 영흥도 수산시장에서 싱싱한 해산물 사다가 구워먹었는데 레전드... 애들도 맛있다고 난리!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#7EC8B8;">D</div>
+              <div>
+                <div class="review-name">동동이맘</div>
+                <div class="review-room">미니캠프</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.09</div></div>
+          </div>
+          <p class="review-text">아기랑 첫 여행! 미니캠프 아담하고 깨끗해서 <strong>아기 데리고 가기 완전 편했어요.</strong> 잔디마당에서 매트 깔고 아기랑 누워있는데 이게 바로 육아 힐링이구나 싶었습니다.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:var(--wood);">W</div>
+              <div>
+                <div class="review-name">우진파파</div>
+                <div class="review-room">저녁노을</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.10</div></div>
+          </div>
+          <p class="review-text">회사 동료 8명이서 워크숍 겸 왔어요. <strong>독채라 회의도 하고 바베큐 파티도 하고!</strong> 다들 "여기 어떻게 찾았냐, 호텔보다 낫다"고 하더라구요. 영흥대교 드라이브도 멋지고 강추!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#C490D1;">N</div>
+              <div>
+                <div class="review-name">나나여행기</div>
+                <div class="review-room">감성달빛</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.11</div></div>
+          </div>
+          <p class="review-text">사진으로 볼 때보다 <strong>실제로 보면 10배는 더 예뻐요.</strong> 특히 해질녘 테라스에서 보는 풍경은 제주도 못지않습니다. 서울에서 이렇게 가까운 곳에 이런 힐링 공간이 있다니 진작 올 걸!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="review-avatar" style="background:#E67E73;">T</div>
+              <div>
+                <div class="review-name">투게더 패밀리</div>
+                <div class="review-room">가족사랑</div>
+              </div>
+            </div>
+            <div><div class="review-stars">★★★★★</div><div class="review-date">2025.12</div></div>
+          </div>
+          <p class="review-text">크리스마스에 가족 모임으로 왔어요. <strong>거실에서 다 같이 보드게임하고 바베큐하면서 최고의 연말을 보냈습니다.</strong> 사장님이 챙겨주신 작은 선물에 감동! 매년 올 겁니다.</p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1002,6 +1396,8 @@ img { max-width: 100%; height: auto; }
   </span>
 </footer>
 
+<div class="copy-toast" id="copyToast">주소가 복사되었습니다!</div>
+
 <script>
 // Navigation scroll effect
 const nav = document.getElementById('nav');
@@ -1030,6 +1426,16 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Copy address
+function copyAddress() {
+  const address = '인천 옹진군 영흥면 영흥로722번길 128 1동';
+  navigator.clipboard.writeText(address).then(() => {
+    const toast = document.getElementById('copyToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
 </script>
 
 </body>
